@@ -56,17 +56,3 @@ Evaluation criteria:
  ● Abstraction
  ● Object-Oriented concepts.
  ● Language proficiency.
-
-+-----------------+       +-----------------+       +-----------------+       +---------------------+
-|     User        |       |     Order       |       |   OrderBook     |       |   TradingSystem     |
-+-----------------+       +-----------------+       +-----------------+       +---------------------+
-| - user_id       |       | - order_id      |       | - buy_orders    |       | - users             |
-| - username      |       | - user_id       |       | - sell_orders   |       | - order_books       |
-| - phone_number  |       | - order_type    |       | - mtx           |       | - mtx               |
-| - email_id      |       | - stock_symbol  |       |-----------------|       |---------------------|
-+-----------------+       | - quantity      |       | + place_order()  |       | + register_user()   |
-| + User()        |       | - price         |       | + cancel_order() |       | + place_order()     |
-| + User(...)     |       | - order_accepted|       | + match_orders() |       | + cancel_order()    |
-+-----------------+       | - status        |       | + get_buy_orders()|      | + query_order_status()|
-                         +-----------------+       | + get_sell_orders()|      | + match_orders()    |
-                                                   +-------------------+       | + ~TradingSystem()   |
